@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar"/>
+
+    <style name="GetDataTextView">
+        <item name = "android:background">@color/colorGetTV</item>
+        <item name = "android:textColor">@color/colorGetText</item>
+    </style>
+
+
+</resources>

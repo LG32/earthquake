@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="信息发送"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/barrier2"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_info_five"/>
+
+    <TextView
+        android:id="@+id/textView_info"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="终端设备01:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView_get"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        style="@style/GetDataTextView"
+        android:text="终端数据接收中..."
+        app:layout_constraintStart_toEndOf="@+id/textView_info"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"/>
+
+    <TextView
+        android:id="@+id/textView_info_two"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="终端设备02:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_info"/>
+
+    <TextView
+        android:id="@+id/textView_get_two"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        style="@style/GetDataTextView"
+        android:text="终端数据接收中..."
+        app:layout_constraintStart_toEndOf="@+id/textView_info_two"
+        app:layout_constraintTop_toBottomOf="@+id/textView_get"/>
+
+    <TextView
+        android:id="@+id/textView_info_three"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="终端设备03:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_info_two"/>
+
+    <TextView
+        android:id="@+id/textView_get_three"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        style="@style/GetDataTextView"
+        android:text="终端数据接收中..."
+        app:layout_constraintStart_toEndOf="@+id/textView_info_three"
+        app:layout_constraintTop_toBottomOf="@+id/textView_get_two"/>
+
+    <TextView
+        android:id="@+id/textView_info_four"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="终端设备04:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_info_three"/>
+
+    <TextView
+        android:id="@+id/textView_get_four"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        style="@style/GetDataTextView"
+        android:text="终端数据接收中..."
+        app:layout_constraintStart_toEndOf="@+id/textView_info_four"
+        app:layout_constraintTop_toBottomOf="@+id/textView_get_three"/>
+
+    <TextView
+        android:id="@+id/textView_info_five"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="终端设备05:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_info_four"/>
+
+    <TextView
+        android:id="@+id/textView_get_five"
+        android:layout_width="300dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        style="@style/GetDataTextView"
+        android:text="终端数据接收中..."
+        app:layout_constraintStart_toEndOf="@+id/textView_info_five"
+        app:layout_constraintTop_toBottomOf="@+id/textView_get_four"/>
+
+    <Button
+        android:id="@+id/button_finish"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="返回"
+        app:layout_constraintBottom_toBottomOf="@+id/button_send"
+        app:layout_constraintEnd_toEndOf="@+id/barrier2"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toEndOf="@+id/button_send"
+        app:layout_constraintTop_toTopOf="@+id/button_send"
+        app:layout_constraintVertical_bias="0.0"/>
+</android.support.constraint.ConstraintLayout>
+

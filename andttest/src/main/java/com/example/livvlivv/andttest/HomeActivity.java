@@ -21,11 +21,11 @@ import java.net.UnknownHostException;
 
 public class HomeActivity extends Activity implements MyUAObServer{
     private static final String TAG = HomeActivity.class.getSimpleName();
-    private Button bu_find,bu_time,bu_xbee,bu_finish,bu_conip;
+    private Button bu_find,bu_time,bu_xbee,bu_finish;
     private MyUAService myuaService;
     private HomeActivity.MyServiceConn conn;
     public EditText et_conip;
-    private Socket socket;
+    private SocketConnect socketConnect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,6 @@ public class HomeActivity extends Activity implements MyUAObServer{
         bu_time = findViewById(R.id.button_settime);
         bu_xbee = findViewById(R.id.button_xbee);
         bu_finish = findViewById(R.id.button_end);
-        bu_conip = findViewById(R.id.button_conip);
         et_conip = findViewById(R.id.ip_con);
 
         conn = new HomeActivity.MyServiceConn();
@@ -46,13 +45,11 @@ public class HomeActivity extends Activity implements MyUAObServer{
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this,ZigbeeActivity.class);
-                Bundle bundle = new Bundle();
-
-                HomeActivity.this.startActivity(i);
-                bundle.putSerializable("socket", (Serializable) socket);
-                i.putExtra("bundle", bundle);
+                i.putExtra("ip",et_conip.getText().toString());
+                startActivity(i);
             }
         });
+
         bu_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +66,7 @@ public class HomeActivity extends Activity implements MyUAObServer{
                 }
             }
         });
+
         bu_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,16 +76,6 @@ public class HomeActivity extends Activity implements MyUAObServer{
                 }
             }
         });
-
-        bu_conip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String inputIp = et_conip.getText().toString();
-                //获取输入的ip并显示
-                Log.d(TAG, "onClick: "+inputIp);
-            }
-        });
-
     }
 
     @Override
@@ -118,42 +106,5 @@ public class HomeActivity extends Activity implements MyUAObServer{
         }
     }
 
-    /**
-     * homeActivity 页,连接成功后将socket值传入zigbee页
-     */
-    public class SocketConnect extends Thread {
 
-        String ip;
-        int port;
-
-        /**
-         * @param ip   ip地址
-         * @param port 端口号
-         */
-        SocketConnect(String ip, int port) {
-            this.ip = ip;
-            this.port = port;
-        }
-
-        @Override
-        public void run() {
-            try {
-                socket = new Socket(ip, port);
-                socket.setSoTimeout(5000); //5秒超时
-//                ClientThread clientThread = new ClientThread(socket);
-//                clientThread.start();
-                if(socket.isClosed() == false && socket.isConnected() == true){
-                    Log.d(TAG, "SocketConnect: 连接成功");
-                }
-            } catch (UnknownHostException e) {
-                // TODO Auto-generated catch block
-                Log.e("UnknownHost", "来自服务器的数据");
-                e.printStackTrace();
-            } catch (IOException e) {
-                Log.e("IOException", "来自服务器的数据");
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-    }
 }

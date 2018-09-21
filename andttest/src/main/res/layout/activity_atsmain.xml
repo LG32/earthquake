@@ -8,20 +8,38 @@
     tools:context=".HomeActivity">
 
 
-    <Button
-        android:id="@+id/button_end"
+    <TextView
+        android:id="@+id/ip_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="退出系统"
-        app:layout_constraintBottom_toBottomOf="@+id/button_xbee"
+        android:layout_marginStart="300dp"
+        android:text="输入ip地址:"
+        app:layout_constraintEnd_toStartOf="@+id/ip_con"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="30dp"
+        tools:ignore="MissingConstraints"
+        android:textColor="#000"/>
+
+    <EditText
+        android:id="@+id/ip_con"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginEnd="300dp"
+        android:text="192.168.199.187"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.684"
-        app:layout_constraintStart_toEndOf="@+id/button_xbee"
-        app:layout_constraintTop_toTopOf="@+id/button_xbee"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/ip_text"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="扫描网络"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip_con" />
 
     <TextView
         android:id="@+id/textView_find"
@@ -35,6 +53,16 @@
         app:layout_constraintHorizontal_bias="0.006"
         app:layout_constraintStart_toEndOf="@+id/button_find"
         app:layout_constraintTop_toTopOf="@+id/button_find" />
+
+    <Button
+        android:id="@+id/button_settime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="同步时钟"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_find" />
 
     <TextView
         android:id="@+id/textView_endptime"
@@ -53,57 +81,26 @@
         android:id="@+id/button_xbee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:text="跳转 Xbee Activity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_settime" />
 
     <Button
-        android:id="@+id/button_settime"
+        android:id="@+id/button_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="同步时钟"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_find" />
-
-    <Button
-        android:id="@+id/button_find"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="扫描网络"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ip_con"
-        tools:layout_editor_absoluteY="99dp" />
-
-    <EditText
-        android:id="@+id/ip_con"
-        android:layout_width="397dp"
-        android:layout_height="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="请输入ip地址"
-        app:layout_constraintEnd_toStartOf="@+id/button_conip"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_conip" />
-
-    <Button
-        android:id="@+id/button_conip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="8dp"
-        android:text="连接"
+        android:text="退出系统"
+        app:layout_constraintBottom_toBottomOf="@+id/button_xbee"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/ip_con"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
-
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toEndOf="@+id/button_xbee"
+        app:layout_constraintTop_toTopOf="@+id/button_xbee"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>
